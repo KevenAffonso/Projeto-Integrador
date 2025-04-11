@@ -1,0 +1,263 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- arquivos style -->
+    <link href="./css/calender.css" rel="stylesheet">
+    <link href="./css/darkMode.css" rel="stylesheet">
+    <link href="./css/style_index.css" rel="stylesheet">
+    <link href="./css/menu_lateral.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="corpo_home">
+        <div id="informacao">
+            <div class="info_1">
+                <ul class="botoes">
+                    <li class="item_botoes">
+                        <span class="icon_botoes"><i class="bi bi-plus-circle-fill"></i></span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="txt_botoes">Cadastrar</span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="icon_arrow"><i class="bi bi-caret-down-fill"></i></span>
+
+                    </li>
+                    
+                    <nav class="menu_sub">
+                        
+                        <ul class="sub_botoes" onclick="insere()">
+                            
+                            <li class="sub_item_botoes">
+                                <span class="sub_icon_botoes"><i class="bi bi-plus-circle-fill"></i></span>
+                            </li>
+                            <li class="sub_item_botoes">
+                                <span class="sub_txt_botoes">Cadastrar Escola</span>
+                            </li>
+                        
+                        </ul>
+                    
+
+                        <ul class="sub_botoes">
+                            <li class="sub_item_botoes">
+                                <span class="sub_icon_botoes"><i class="bi bi-plus-circle-fill"></i></span>
+                            </li>
+                            <li class="sub_item_botoes">
+                                <span class="sub_txt_botoes">Cadastrar Cuidadores</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </ul>
+            </div>
+
+            <div class="info_2">
+                <ul class="botoes">
+                    <li class="item_botoes">
+                        <span class="icon_botoes"><i class="bi bi-pencil-square"></i></span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="txt_botoes">Editar</span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="icon_arrow"><i class="bi bi-caret-down-fill"></i></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info_3">
+                <ul class="botoes">
+                    <li class="item_botoes">
+                        <span class="icon_botoes"><i class="bi bi-dash-circle-fill"></i></span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="txt_botoes">Excluir</span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="icon_arrow"><i class="bi bi-caret-down-fill"></i></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info_4">
+                <ul class="botoes">
+                    <li class="item_botoes">
+                        <span class="icon_botoes"><i class="bi bi-printer-fill"></i></span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="txt_botoes">Imprimir</span>
+                    </li>
+                    <li class="item_botoes">
+                        <span class="icon_arrow"><i class="bi bi-caret-down-fill"></i></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="escopo">
+            <div class="calendario">
+                <div id="container">
+                    <div id="header">
+                        <div>
+                            <button id="backButton">Voltar</button>
+                        </div>
+
+                        <div id="monthDisplay"></div>
+
+                        <div>
+                            <button id="nextButton">Próximo</button>
+                        </div>
+
+                    </div>
+
+                    <div id="weekdays">
+                        <div>Domingo</div>
+                        <div>Segunda</div>
+                        <div>Terça</div>
+                        <div>Quarta</div>
+                        <div>Quinta</div>
+                        <div>Sexta</div>
+                        <div>Sábado</div>
+                    </div>
+
+
+                    <!-- div dinamic -->
+                    <div id="calendar"></div>
+
+
+                </div>
+
+                <div id="newEventModal">
+                    <h2>New Evente</h2>
+
+                    <input id="eventTitleInput" placeholder="Event Title" />
+
+                    <button id="saveButton"> Salvar</button>
+                    <button id="cancelButton">Cancelar</button>
+                </div>
+
+                <div id="deleteEventModal">
+                    <h2>Evento</h2>
+
+                    <div id="eventText"></div><br>
+
+
+                    <button id="deleteButton">Deletar</button>
+                    <button id="closeButton">Fechar</button>
+                </div>
+
+                <div id="modalBackDrop"></div>
+                
+
+            </div>
+            <div id="resumo_dia">
+                <div id="titulo">
+                    <h1> Resumo do dia</h1>
+                </div>
+                <div id="notas">
+                    <div>
+                        <h3>Notas:</h3>
+                    </div>
+                    <div id="eventTitle"></div>
+                </div>
+                <div class="style-tabela">
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+                                <td class="top center"><strong>ID</strong></td>
+                                <td class="top center"><strong>Período</strong></td>
+                                <td class="top center"><strong>Responsável/Escola</strong></td>
+                                <td class="top center"><strong>Qt Adultos</strong></td>
+                                <td class="top center"><strong>Qt Crianças</strong></td>
+                                <td class="top center"><strong>Selecionar</strong></td>
+                            </tr>
+
+                        </tbody>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td align="center">1</td>
+                                <td align="center">Manhã</td>
+                                <td align="center">Keven Affonso / Colégio Nogueira</td>
+                                <td align="center">5</td>
+                                <td align="center">20</a> </td>
+                                <td align="center">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">OK</label>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td align="center">2</td>
+                                <td align="center">Manhã</td>
+                                <td align="center">Keven Affonso / Colégio Nogueira</td>
+                                <td align="center">5</td>
+                                <td align="center">20</a> </td>
+                                <td align="center">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="keven">
+                                    <label class="form-check-label" for="keven">OK</label>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+                </div><!--tabela-->
+            </div>
+        </div>
+        <div id="body_relatorio">
+            <div class="relatorio" id="cad_escola">
+            </div>
+        </div>
+    </nav>
+
+    <nav class="menu_lateral">
+        <div class="btn_expandir">
+            <i class="bi bi-list" id="btn_exp"></i>
+        </div>
+        <ul>
+            <li class="item_menu_select">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-house-fill"></i></span>
+                    <span class="txt_link">Home</span>
+                </a>
+            </li>
+            <li class="item_menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-bar-chart-fill"></i></span>
+                    <span class="txt_link">Dashboard</span>
+                </a>
+            </li>
+            <li class="item_menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-gear-fill"></i></span>
+                    <span class="txt_link">Configurações</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+<footer>
+    <script src="./scripts/darkMode.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/menu.js"></script>
+</footer>
+
+</html>
